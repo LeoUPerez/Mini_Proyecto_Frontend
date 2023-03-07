@@ -5,23 +5,23 @@ import  { Toaster, toast } from 'react-hot-toast';
 
 const Register = () => {
 
-  const [body, setbody] = useState({username: "", apellido: "", password: "",
-                                    telefono: "", correo: ""});
+  const [body, setbody] = useState({username: "", last_name: "", password: "",
+                                    phone: "", mail: ""});
 
   function onchange() {
     let user = document.getElementById('Name');
     let lastname = document.getElementById('Last_name');
     let password = document.getElementById('Password');
-    let telefono = document.getElementById('Phone_Number');
-    let correo = document.getElementById('Mail');
+    let phone_user = document.getElementById('Phone_Number');
+    let mail_user = document.getElementById('Mail');
     
     setbody(
       {
         username: user.value,
-        apellido: lastname.value,
+        last_name: lastname.value,
         password: password.value,
-        telefono: telefono.value,
-        correo: correo.value
+        phone: phone_user.value,
+        mail: mail_user.value
       }
     )  
     // console.log(body);
@@ -29,9 +29,9 @@ const Register = () => {
 
   // !Peticion hacia  el backend
   function SendData() {
-    if (body.username === "" || body.apellido === "" || body.password === "" ||
-        body.telefono === "" || body.correo === "" || body.username === "" && body.apellido === "" &&
-        body.password === "" && body.telefono === "" && body.correo === "") {
+    if (body.username === "" || body.last_name === "" || body.password === "" ||
+        body.phone === "" || body.mail === "" || body.username === "" && body.last_name === "" &&
+        body.password === "" && body.phone === "" && body.mail === "") {
           toast.error('You must fill in all fields');
     }else{
       axios.post('http://localhost:3000/api/usuarios/'+'14d5ds', body)

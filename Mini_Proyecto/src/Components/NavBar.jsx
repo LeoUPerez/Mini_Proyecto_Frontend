@@ -7,8 +7,8 @@ const NavBar = () => {
 
     if (target.id === "Link") {
       let id = target.children[0].id;
-      let elemento = document.getElementById(id);
-      elemento.className = "w-1.5 h-1.5 rounded-full bg-blue-600";
+      let element_target = document.getElementById(id);
+      element_target.className = "w-1.5 h-1.5 rounded-full bg-blue-600";
     }
   }
   function selector_out(e) {
@@ -16,8 +16,8 @@ const NavBar = () => {
 
     if (target.id === "Link") {
       let id = target.children[0].id;
-      let elemento = document.getElementById(id);
-      elemento.className = "w-1.5 h-1.5 rounded-full";
+      let element_target = document.getElementById(id);
+      element_target.className = "w-1.5 h-1.5 rounded-full";
     }
   }
 
@@ -29,7 +29,7 @@ const NavBar = () => {
         onMouseOut={selector_out}
         className=" w-20 transition-all duration-300 flex items-center flex-col justify-center max-md:w-64 hover:text-blue-600"
       >
-        <div id="Link1" className="w-1.5 h-1.5 rounded-full"></div>
+        <div id="circle_decoration_1" className="w-1.5 h-1.5 rounded-full"></div>
         Home
       </Link>
       {/* <Link
@@ -58,7 +58,7 @@ const NavBar = () => {
         onMouseOut={selector_out}
         className=" transition-all duration-300 w-20 flex items-center flex-col justify-center hover:text-blue-600"
       >
-        <div id="Link4" className="w-1.5 h-1.5 rounded-full"></div>
+        <div id="circle_decoration_2" className="w-1.5 h-1.5 rounded-full"></div>
         Services
       </Link>
       <Link
@@ -67,7 +67,7 @@ const NavBar = () => {
         onMouseOut={selector_out}
         className=" transition-all w-20 duration-300 flex items-center flex-col justify-center hover:text-blue-600"
       >
-        <div id="Link5" className="w-1.5 h-1.5 rounded-full"></div>
+        <div id="circle_decoration_3" className="w-1.5 h-1.5 rounded-full"></div>
         About us
       </Link>
       <Link
@@ -76,7 +76,7 @@ const NavBar = () => {
         onMouseOut={selector_out}
         className=" w-20 transition-all duration-300 flex items-center flex-col justify-center hover:text-blue-600"
       >
-        <div id="Link6" className="w-1.5 h-1.5 rounded-full"></div>
+        <div id="circle_decoration_4" className="w-1.5 h-1.5 rounded-full"></div>
         Contacts
       </Link>
       <Link
@@ -85,13 +85,13 @@ const NavBar = () => {
         // onMouseOut={selector_out}
         className=" transition-all duration-300 w-20 flex items-center flex-col justify-center hover:text-blue-600"
       >
-        <div id="Link7" className="w-1.5 h-1.5 rounded-full"></div>
+        <div id="circle_decoration_5" className="w-1.5 h-1.5 rounded-full"></div>
           {/* <Link className='hover:text-blue-600 transition-all duration-300' to={'/login'}> */}
                     {/*Funcion IIFE */}
                     {(() => {
                         if (sessionStorage.length !== 0) {
                         return (
-                            <span className="fa-solid fa-user font-light text-xs flex gap-1 tracking-widest">{sessionStorage.getItem('Usuario')}</span>
+                            <span className="fa-solid fa-user font-light text-xs flex gap-1 tracking-widest">{sessionStorage.getItem('User')}</span>
                         );
                         } else{
                         return (

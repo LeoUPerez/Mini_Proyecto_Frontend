@@ -29,12 +29,11 @@ const Log_in = () => {
     }else{
       axios.post('http://localhost:3000/api/usuarios', body)
       .then(({data})=>{
-        if (data.message !== 'Usuario no encontrado' ) {
+        if (data.message !== 'user not found' ) {
           location.href='/';
-          sessionStorage.setItem('Usuario', body.username) 
+          sessionStorage.setItem('User', body.username) 
         }else{
           toast.error('Incorrect user or password');
-          
         }
       }).catch(({err})=>{
           console.log(err);

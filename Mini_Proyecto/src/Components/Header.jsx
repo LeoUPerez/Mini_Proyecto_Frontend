@@ -1,9 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import NavBar from "./NavBar";
+// import { Link } from "react-router-dom";
+// import NavBar from "./NavBar";
 import Img from '../Images/Real-State.png'
 
-const Header = ({Onclick}) => {
+const Header = () => {
 
   return (
     <section className="w-1/2 h-full pt-2 flex max-md:row max-md:justify-start">

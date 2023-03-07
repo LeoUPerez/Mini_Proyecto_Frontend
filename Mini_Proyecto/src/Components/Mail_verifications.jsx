@@ -4,26 +4,27 @@ import  { Toaster, toast } from 'react-hot-toast';
 
 const Mail_verifications = () => {
 
-const [mail, setmail] = useState({correo: ""})
+const [mail, setmail] = useState({user_mail: ""})
 
 function onchange(params) {
-    let correo = document.getElementById('mail');
+    let mail = document.getElementById('mail');
 
     setmail({
-        correo: correo.value
+      user_mail: mail.value
     })
     // console.log(mail);
 }
 
   // !Peticion hacia  el backend
   function SendData() {
-    if (mail.correo !== "") {
+    if (mail.user_mail !== "") {
       axios.patch('http://localhost:3000/api/usuarios/', mail)
       .then(({data})=>{
-        if (data.message !== 'Usuario no encontrado' ) {
+        if (data.message !== 'user not found' ) {
           location.href='/CodeVerification';
         }else{
           toast.error('Mail not found');
+          console.log(data);
         }
       }).catch(({err})=>{
         console.log(err);
@@ -35,7 +36,7 @@ function onchange(params) {
   // !Peticion hacia el backend
 
 function check_mail() {
-    if (mail.correo !== "") {
+    if (mail.user_mail !== "") {
         SendData();
     }else{
       toast.error('You must fill in all fields');
@@ -56,4 +57,4 @@ function check_mail() {
   )
 }
 
-export default Mail_verifications
+export default Mail_verifications;

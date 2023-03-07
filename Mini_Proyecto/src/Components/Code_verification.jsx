@@ -21,7 +21,7 @@ const Code_verification = () => {
       axios.patch('http://localhost:3000/api/usuarios/'+'14d5ds', code)
       .then(({data})=>{
         console.log(data);
-        if (data.message !== 'Codigo de verificacion incorrecto' ) {
+        if (data.message !== 'Incorrect verification code' ) {
           location.href='/Update_password';
         }else{
           toast.error('Incorrect code');
