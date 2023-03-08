@@ -7,24 +7,35 @@ import  { Toaster, toast } from 'react-hot-toast';
 const Log_in = () => {
 
   const [body, setbody] = useState({username: "", password: ""});
+  const [required_user, setRe_User] = useState(true);
+  const [required_pass, setRe_Pass] = useState(true);
 
   function onchange() {
     let user = document.getElementById('user');
     let pass = document.getElementById('pass');
-    
+
     setbody(
       {
         username: user.value,
         password: pass.value
       }
     )  
+      if (user.value !== "") {
+        setRe_User(false)
+      }else{
+        setRe_User(true)
+      }
+      if (pass.value !== "") {
+        setRe_Pass(false)
+      }else{
+        setRe_Pass(true)
+      }
+
   }
 
   const Verify_account = async () => {
 
-    if (body.username === "" && body.password === "" || body.username === "" || body.password === "") {
-      toast.error('You must fill in all fields');
-    }else{
+    // !Poner error si los campos no estan todos llenos
       axios.post('http://localhost:3000/api/usuarios', body)
       .then(({data})=>{
         if (data.message !== 'user not found' ) {
@@ -36,9 +47,6 @@ const Log_in = () => {
       }).catch(({err})=>{
           console.log(err);
       })
-
-    }
-
   }
 
   return (
@@ -52,24 +60,27 @@ const Log_in = () => {
                     <strong>Create Account</strong> 
                   </Link>
                 </div>
-                <div className='flex flex-col gap-3 h-1/2 justify-center items-center relative'>
-                  <input onChange={onchange} id='user' className='w-3/5 h-9 outline-blue-200 p-2 rounded-lg max-md:w-2/3' placeholder='User' type="text" />
-                  <input onChange={onchange} id='pass' className='w-3/5 h-9 outline-blue-200 p-2 rounded-lg max-md:w-2/3' placeholder='Password' type="password" />
+                <div id='inputs' className='flex flex-col h-1/2 justify-center items-center relative'>
+                  <input onChange={onchange} id='user' name='user' className='w-3/5 h-9 outline-blue-200 p-2 rounded-lg max-md:w-2/3' placeholder='User' type="text" />
+                  <div className={required_user ? 'text-xs min-w-[60%] p-0.5 text-red-600 opacity-100 max-md:min-w-[66%]' : 'text-xs min-w-[60%] p-0.5 text-red-600 opacity-0 max-md:min-w-[66%]'}>Required field</div>
+                  <input onChange={onchange} id='pass' name='pass' className='w-3/5 h-9 outline-blue-200 p-2 rounded-lg max-md:w-2/3' placeholder='Password' type="password" />
+                  <div className={required_pass ? 'text-xs min-w-[60%] p-0.5 text-red-600 opacity-100 max-md:min-w-[66%]' : 'text-xs min-w-[60%] p-0.5 text-red-600 opacity-0 max-md:min-w-[66%]'}>Required field</div>
                   <div className='w-full flex justify-end pr-2 absolute bottom-1'>
                   <Link className=' text-blue-900 max-md:text-xs' to={'/Mailverification'}>
                   Forgot your password?
                   </Link>
                 </div>
                 </div>
-                <div className='w-full flex justify-center pt-5'>
-                  <button onClick={(e)=>{ e.preventDefault(); Verify_account()}} className='w-28 uppercase border-2 bg-blue-500 rounded-full p-1 font-thin transition-all duration-300 hover:bg-green-300 hover:text-black text-white max-md:w-20'>
-                    <strong>Log in</strong>
+                <div className='w-full flex justify-center pt-5'> {/**/}
+                  <button onClick={(e)=>{ e.preventDefault(); Verify_account()}}  id='btn' className='w-28 uppercase border-2 bg-blue-500 rounded-full p-1 font-thin transition-all duration-300 text-white hover:bg-green-300 hover:text-black max-md:w-20'>
+                    <strong>Log in</strong> 
                   </button>
                 </div>
             </form>
         </div>
     </section>
   )
+
 }
 
 export default Log_in;

@@ -5,6 +5,7 @@ import  { Toaster, toast } from 'react-hot-toast';
 const Code_verification = () => {
 
   const [code, setcode] = useState({code: ""});
+  const [required_code, setRe_code] = useState(true);
 
   function onchange() {
     let codeuser = document.getElementById('code');
@@ -12,6 +13,12 @@ const Code_verification = () => {
     setcode({
       code: codeuser.value
     })
+
+    if (codeuser.value !== "") {
+      setRe_code(false)
+    } else {
+      setRe_code(true)
+    }    
     // console.log(code);
   }
 
@@ -38,10 +45,11 @@ const Code_verification = () => {
   return (
     <section className='w-full h-screen bg-blue-200 flex justify-center items-center'>
       <Toaster toastOptions={{duration:1700}} position='top-right'/>
-        <form className='min-w-[25%] min-h-[45%] flex flex-col items-center justify-center gap-3 bg-gray-200 rounded-2xl max-md:min-w-[95%] max-md:min-h-[40%]'>
-            <p className='text-red-600 text-xs'>¡Enter the code sent to your email!</p>
+        <form className='min-w-[25%] min-h-[45%] flex flex-col items-center justify-center bg-gray-200 rounded-2xl max-md:min-w-[95%] max-md:min-h-[40%]'>
+            <p className='text-red-600 text-xs pb-2'>¡Enter the code sent to your email!</p>
             <input onChange={onchange} id='code' type="email" name="" autoComplete='off' placeholder='Enter your code' className='w-8/12 h-9 outline-blue-200 p-2 rounded-lg max-md:w-2/3' />
-            <button onClick={(e)=>{ e.preventDefault(); check_code()}} className='w-28 uppercase border-2 bg-blue-500 rounded-full p-1 font-thin text-white transition-all duration-300 hover:bg-green-300 hover:text-black max-md:w-20'>
+            <div className={required_code ? 'text-xs min-w-[65%] p-0.5 text-red-600 opacity-100 max-md:min-w-[65%]' : 'text-xs min-w-[60%] p-0.5 text-red-600 opacity-0 max-md:min-w-[60%]'}>Required field</div>
+            <button onClick={(e)=>{ e.preventDefault(); check_code()}} id='btn' className='w-28 uppercase border-2 bg-blue-500 rounded-full p-1 font-thin text-white transition-all duration-300 max-md:w-20'>
               Verify
             </button>
         </form>
