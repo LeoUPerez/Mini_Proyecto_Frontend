@@ -10,8 +10,8 @@ const Home = () => {
         let hd = document.getElementById('header');
         let btns = document.getElementById('btns-Open');
 
-        hd.className = 'w-full h-10 flex items-center pt-4';
-        nv.className= 'opacity-100 max-md:text-base max-md:pt-32';
+        hd.className = 'w-full h-56 flex items-start ';
+        nv.className= 'opacity-100 bg-gray-200 relative gap-2 mt-4 max-md:text-base max-md:w-36 max-md:h-48 max-md:pb-1.5 max-md:flex max-md:justify-center max-md:flex-col max-md:items-center max-md:rounded-lg  ';
         btns.className = 'w-8 h-8 text-xs opacity-0 max-md:opacity-0';
     }
     function CloseNav() {
@@ -20,18 +20,18 @@ const Home = () => {
         let btns = document.getElementById('btns-Open');
 
         hd.className = 'w-full h-14 flex items-center';
-        nv.className= 'relative opacity-100 h-12 w-full text-base max-md:opacity-0 max-md:text-xs max-md:w-2/5';
+        nv.className= 'h-full pt-4 flex justify-center max-md:opacity-0 items-center gap-4 font-light rounded-xl pb-2 relative max-md:w-36 max-md:gap-1.5 max-md:flex-wrap';
         btns.className = 'w-8 h-8 text-base opacity-0 max-md:opacity-100';
     }
   return (
     <section>
-        <div className='w-full h-screen'>
-           <div className='w-full h-14 flex items-center' id='header'>
-                <Header/>
-                <div className='h-12 relative w-full max-md:w-2/5 max-md:opacity-0 max-md:h-full max-md:text-xs' id='navbar'>
-                  <NavBar/>
-                 <button onClick={CloseNav} className="absolute top-1 p-1 bg-red-500 flex justify-center items-center rounded-full text-sm w-6 h-6 opacity-0 max-md:opacity-100 max-md:ml-1 max-md:mt-1">X</button>
-                </div>
+        <div className='w-full h-screen '>
+           <div className='w-full h-16 border-b-2 border-gray-200 max-md:border-gray-50 flex items-center  max-md:w-full' id='header'>
+                  <Header/>
+                  <div className='h-3/4 w-0.5 mt-2 ml-2 bg-black max-md:bg-white'></div>
+                  <NavBar
+                    Onclick={CloseNav}
+                  />
                 <button id='btns-Open' onClick={OpenNav} className=" w-8 h-8 text-base opacity-0 max-md:opacity-100"><i className="fa-solid fa-bars"></i></button>
             </div> 
         </div>

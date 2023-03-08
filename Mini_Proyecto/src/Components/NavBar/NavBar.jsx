@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const NavBar = () => {
+const NavBar = ({Onclick}) => {
   function selector_in(e) {
     let target = e.target;
 
@@ -22,7 +22,7 @@ const NavBar = () => {
   }
 
   return (
-    <nav className=" w-full h-full flex justify-center items-center gap-4 bg-gray-200 font-light rounded-xl pb-2 relative max-md:w-36 max-md:gap-1.5 max-md:flex-wrap">
+    <nav id="navbar" className=" h-full flex justify-center pt-4 gap-4  items-center  font-light rounded-xl pb-2 relative max-md:opacity-0 max-md:w-36 max-md:gap-1.5 max-md:flex-wrap">
       <Link
         id="Link"
         onMouseEnter={selector_in}
@@ -32,26 +32,6 @@ const NavBar = () => {
         <div id="circle_decoration_1" className="w-1.5 h-1.5 rounded-full"></div>
         Home
       </Link>
-      {/* <Link
-        id="prueba"
-        onMouseEnter={selector_in}
-        onMouseOut={selector_out}
-        className="hover:text-blue-600 transition-all duration-300 flex items-center flex-col justify-center"
-      >
-        <div id='link2' className='w-1.5 h-1.5 rounded-full'>
-        </div>
-        Link_2
-      </Link>
-      <Link
-        id="prueba"
-        onMouseEnter={selector_in}
-        onMouseOut={selector_out}
-        className="hover:text-blue-600 transition-all duration-300 flex items-center flex-col justify-center"
-      >
-        <div id='link3' className='w-1.5 h-1.5 rounded-full'>
-        </div>        
-        Link_3
-      </Link> */}
       <Link
         id="Link"
         onMouseEnter={selector_in}
@@ -81,12 +61,9 @@ const NavBar = () => {
       </Link>
       <Link
       to={'/login'}
-        // onMouseEnter={selector_in}
-        // onMouseOut={selector_out}
         className=" transition-all duration-300 w-20 flex items-center flex-col justify-center hover:text-blue-600"
       >
         <div id="circle_decoration_5" className="w-1.5 h-1.5 rounded-full"></div>
-          {/* <Link className='hover:text-blue-600 transition-all duration-300' to={'/login'}> */}
                     {/*Funcion IIFE */}
                     {(() => {
                         if (sessionStorage.length !== 0) {
@@ -100,9 +77,8 @@ const NavBar = () => {
                         } 
                     })()}{" "}
                     {/*Funcion IIFE */}
-            {/* </Link> */}
       </Link>
-
+      <button onClick={Onclick}  className="absolute top-1 right-1 p-1 bg-red-500 flex justify-center items-center rounded-full text-sm w-6 h-6 opacity-0 max-md:opacity-100">X</button>
     </nav>
   );
 };
