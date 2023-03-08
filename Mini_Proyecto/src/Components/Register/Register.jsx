@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react'
-import Img from '../assets/Images/RealSinName.png'
+import Img from '/Users/Leo/Desktop/Mini_Proyecto_Frontend/Mini_Proyecto/src/assets/Images/RealSinName.png'
 import  { Toaster, toast } from 'react-hot-toast';
 
 const Register = () => {

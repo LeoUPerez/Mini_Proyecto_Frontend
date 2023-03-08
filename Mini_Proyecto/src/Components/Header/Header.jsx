@@ -1,7 +1,7 @@
 import React from "react";
 // import { Link } from "react-router-dom";
 // import NavBar from "./NavBar";
-import Img from '../assets/Images/Real-State.png'
+import Img from '/Users/Leo/Desktop/Mini_Proyecto_Frontend/Mini_Proyecto/src/assets/Images/Real-State.png'
 
 const Header = () => {
 

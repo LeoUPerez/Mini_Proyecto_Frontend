@@ -2,8 +2,6 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import  { Toaster, toast } from 'react-hot-toast';
-import NavBar from './NavBar';
-import Header from './Header';
 // import LoginImg from '../Images/Login.avif' //!Imagen para login
 
 const Log_in = () => {
