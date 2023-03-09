@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import  { Toaster, toast } from 'react-hot-toast';
+import RespValidation from '/Users/Leo/Desktop/Mini_Proyecto_Frontend/Mini_Proyecto/src/utils/funtions/Regex.js'
 // import LoginImg from '../Images/Login.avif' //!Imagen para login
 
 const Log_in = () => {
@@ -34,8 +35,8 @@ const Log_in = () => {
   }
 
   const Verify_account = async () => {
-
     // !Poner error si los campos no estan todos llenos
+    // RespValidation.RegexValidation();  //!Asi llamas las funciones que tienes en utils, la tienes ahi porque son funciones que se pueden reutilizar en los componentes
       axios.post('http://localhost:3000/api/usuarios', body)
       .then(({data})=>{
         if (data.message !== 'user not found' ) {
