@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react'
-import  { Toaster, toast } from 'react-hot-toast';
+import Swal from 'sweetalert2'
 
 const Mail_verifications = () => {
 
@@ -23,21 +23,22 @@ function onchange(params) {
 
   // !Peticion hacia  el backend
   function SendData() {
-    if (mail.user_mail !== "") {
       axios.patch('http://localhost:3000/api/usuarios/', mail)
       .then(({data})=>{
         if (data.message !== 'user not found' ) {
           location.href='/CodeVerification';
         }else{
-          toast.error('Mail not found');
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Mail not found!'
+            // footer: '<a href="">Why do I have this issue?</a>'
+          })
           console.log(data);
         }
       }).catch(({err})=>{
         console.log(err);
       })
-    }else{
-      toast.error('You must fill in all fields');
-    }
   }
   // !Peticion hacia el backend
 
@@ -45,13 +46,17 @@ function check_mail() {
     if (mail.user_mail !== "") {
         SendData();
     }else{
-      toast.error('You must fill in all fields');
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'You must fill in all fields!'
+        // footer: '<a href="">Why do I have this issue?</a>'
+      })
     }
  }
 
   return (
     <section className='w-full h-screen bg-blue-200 flex justify-center items-center'>
-      <Toaster toastOptions={{duration:1700}} position='top-right'/>
         <form className='min-w-[25%] min-h-[45%] flex flex-col items-center justify-center bg-gray-200 rounded-2xl max-md:min-w-[95%] max-md:min-h-[40%]'>
             <p className='text-red-600 text-xs pb-2'>¡Enter the email you registered with!</p>
             <input onChange={onchange} id='mail' type="email" name="" autoComplete='off' placeholder='Enter your mail' className='w-8/12 h-9 outline-blue-200 p-2 rounded-lg max-md:w-2/3' />

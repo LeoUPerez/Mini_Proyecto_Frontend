@@ -1,14 +1,17 @@
 import axios from 'axios';
 import React, { useState } from 'react'
-import  { Toaster, toast } from 'react-hot-toast';
+import Swal from 'sweetalert2'
 
 const Update_password = () => {
 
   const [password, setpassword] = useState({password: ""});
   const [required_pass, setRe_Pass] = useState(true);
+  const [required_pass_confirm, setRe_Pass_Con] = useState(true);
+
 
   function onchange() {
     let pass = document.getElementById('password');
+    let passconfirm = document.getElementById('confirmPass');
 
     setpassword({
       password: pass.value
@@ -19,24 +22,38 @@ const Update_password = () => {
     } else {
       setRe_Pass(true)
     }
+    if (passconfirm.value !== "") {
+      setRe_Pass_Con(false)
+    } else {
+      setRe_Pass_Con(true)
+    }
   }
 
   function Updatepass() {
     let passconfirm = document.getElementById('confirmPass');
     if (password.password !== "") {
       if (password.password !== passconfirm.value) {
-        toast.error('Passwords must match');
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Passwords must match!'
+          // footer: '<a href="">Why do I have this issue?</a>'
+        })        
       }else{
         // !Peticion hacia el backend
       }
     } else {
-      toast.error('You must fill in all fields');
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'You must fill in all fields!'
+        // footer: '<a href="">Why do I have this issue?</a>'
+      })
     }
   }
 
   return (
     <section className='w-full h-screen bg-blue-200 flex justify-center items-center'>
-      <Toaster toastOptions={{duration:1700}} position='top-right'/>
         <form className='min-w-[25%] min-h-[45%] flex flex-col items-center justify-center bg-gray-200 rounded-2xl max-md:min-w-[95%] max-md:min-h-[40%]'>
             <p className='text-red-600 text-base pb-2'>¡Enter the new password!</p>
             <input onChange={onchange} id='password' type="text" name="" autoComplete='off' placeholder='Password' className='w-8/12 h-9 outline-blue-200 p-2 rounded-lg max-md:w-2/3' />

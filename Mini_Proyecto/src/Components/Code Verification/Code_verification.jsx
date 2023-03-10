@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react'
-import  { Toaster, toast } from 'react-hot-toast';
+import Swal from 'sweetalert2'
 
 const Code_verification = () => {
 
@@ -31,20 +31,29 @@ const Code_verification = () => {
         if (data.message !== 'Incorrect verification code' ) {
           location.href='/Update_password';
         }else{
-          toast.error('Incorrect code');
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Incorrect code!'
+            // footer: '<a href="">Why do I have this issue?</a>'
+          })
         }
       }).catch(({err})=>{
         console.log(err);
       })
     }else{
-      toast.error('You must fill in all fields');
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'You must fill in all fields!'
+        // footer: '<a href="">Why do I have this issue?</a>'
+      })
     }
   }
   // !Peticion hacia el backend
 
   return (
     <section className='w-full h-screen bg-blue-200 flex justify-center items-center'>
-      <Toaster toastOptions={{duration:1700}} position='top-right'/>
         <form className='min-w-[25%] min-h-[45%] flex flex-col items-center justify-center bg-gray-200 rounded-2xl max-md:min-w-[95%] max-md:min-h-[40%]'>
             <p className='text-red-600 text-xs pb-2'>¡Enter the code sent to your email!</p>
             <input onChange={onchange} id='code' type="email" name="" autoComplete='off' placeholder='Enter your code' className='w-8/12 h-9 outline-blue-200 p-2 rounded-lg max-md:w-2/3' />

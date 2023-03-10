@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import  { Toaster, toast } from 'react-hot-toast';
+import Swal from 'sweetalert2'
 // import LoginImg from '../Images/Login.avif' //!Imagen para login
 
 const Log_in = () => {
@@ -35,22 +35,37 @@ const Log_in = () => {
 
   const Verify_account = async () => {
     // !Poner error si los campos no estan todos llenos
-    axios.post('http://localhost:3000/api/usuarios', body)
+
+    if (body.username && body.password !== "") {
+      axios.post('http://localhost:3000/api/usuarios', body)
       .then(({data})=>{
         if (data.message !== 'user not found' ) {
           location.href='/';
           sessionStorage.setItem('User', body.username) 
         }else{
-          toast.error('Incorrect user or password');
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Incorrect user or password!'
+            // footer: '<a href="">Why do I have this issue?</a>'
+          })
         }
       }).catch(({err})=>{
           console.log(err);
       })
+    }else{
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'You must fill in all fields!'
+        // footer: '<a href="">Why do I have this issue?</a>'
+      })
+    }
+
   }
 
   return (
     <section className='w-full h-screen bg-blue-200 flex justify-center items-center'>
-      <Toaster toastOptions={{duration:1700}} position='top-right'/>
         <div className='min-w-[28%] h-2/5 bg-gray-200 opacity-80  rounded-2xl p-2 max-md:min-w-[95%]'>
             <form id='formulario' action="" className='h-full w-full'>
                 <div className='w-full flex justify-end items-center gap-3'>

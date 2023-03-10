@@ -1,7 +1,10 @@
 import axios from 'axios';
 import React, { useState } from 'react'
 import Img from '/Users/Leo/Desktop/Mini_Proyecto_Frontend/Mini_Proyecto/src/assets/Images/RealSinName.png'
-import  { Toaster, toast } from 'react-hot-toast';
+import Regex from '/Users/Leo/Desktop/Mini_Proyecto_Frontend/Mini_Proyecto/src/utils/functions/Regex.js'
+import Swal from 'sweetalert2'
+
+// import  { Toaster, toast } from 'react-hot-toast';
 
 const Register = () => {
 
@@ -12,53 +15,71 @@ const Register = () => {
   const [required_phone, setRe_Phone] = useState(true);
   const [required_mail, setRe_Mail] = useState(true);
 
-  function onchange() {
+  function onchange(e) {
       let user = document.getElementById('Name');
       let lastname = document.getElementById('Last_name');
       let password = document.getElementById('Password');
       let phone_user = document.getElementById('Phone_Number');
       let mail_user = document.getElementById('Mail');
-      
-      setbody(
-        {
-          username: user.value,
-          last_name: lastname.value,
-          password: password.value,
-          phone: phone_user.value,
-          mail: mail_user.value
-        }
-      )  
-  
-      if (user.value !== "") {
-        setRe_User(false)
-      }else{
-        setRe_User(true)
-      }
-      if (lastname.value !== "") {
-        setRe_Last(false)
-      }else{
-        setRe_Last(true)
-      }if (password.value !== "") {
-        setRe_Pass(false)
-      } else {
-        setRe_Pass(true)
-      }if (phone_user.value !== "") {
-        setRe_Phone(false)
-      } else {
-        setRe_Phone(true)
-      }if (mail_user.value !== "") {
-        setRe_Mail(false)
-      } else {
-        setRe_Mail(true)
-      }      
-  }
+      let Not_valid = document.getElementById(e.target.id);
+      let validation = Regex.Verfify(user.value, lastname.value, password.value, phone_user.value, mail_user.value);
+      // console.log(validation);
+      // console.log(e.target);
 
+      if (validation) {
+        setbody(
+          {
+            username: user.value,
+            last_name: lastname.value,
+            password: password.value,
+            phone: phone_user.value,
+            mail: mail_user.value
+          }
+        )  
+    
+        if (user.value !== "") {
+          setRe_User(false)
+        }else{
+          setRe_User(true)
+        }
+        if (lastname.value !== "") {
+          setRe_Last(false)
+        }else{
+          setRe_Last(true)
+        }if (password.value !== "") {
+          setRe_Pass(false)
+        } else {
+          setRe_Pass(true)
+        }if (phone_user.value !== "") {
+          setRe_Phone(false)
+        } else {
+          setRe_Phone(true)
+        }if (mail_user.value !== "") {
+          setRe_Mail(false)
+        } else {
+          setRe_Mail(true)
+        }       
+        Not_valid.className = 'w-3/4 h-9 outline-blue-200 p-2 rounded-lg max-md:w-4/5';
+      }else{
+
+        Not_valid.className = 'w-3/4 h-9 outline-red-400 p-2 rounded-lg max-md:w-4/5'
+
+
+        // console.log(Not_valid);
+      }
+  }
   // !Peticion hacia  el backend
   function SendData() {
+
     if (body.username === "" || body.last_name === "" || body.password === "" ||
         body.phone === "" || body.mail === "" || body.username === "" && body.last_name === "" &&
         body.password === "" && body.phone === "" && body.mail === "") {
-          toast.error('You must fill in all fields');
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'You must fill in all fields!'
+            // footer: '<a href="">Why do I have this issue?</a>'
+          })
     }else{
       axios.post('http://localhost:3000/api/usuarios/'+'14d5ds', body)
       .then(({data})=>{
@@ -66,12 +87,13 @@ const Register = () => {
       }).catch(({err})=>{
         console.log(err);
       })
-      toast.success('User saved successfully');
-      // *Temporizador para redireccionar
-      setTimeout(() => {
-        location.href='/login'; 
-      }, 1000 * 3);//! 1000 * 3 es igual a 3 segundos
-      // *Temporizador para redireccionar
+      Swal.fire({
+        title: 'Real State Info',
+        text: 'Account created successfully, you can log in!',
+        icon: 'success',
+        confirmButtonText: 'Ok',
+        footer: '<a href="/login">Why do I have this issue?</a>'
+      })
     }
   }
   // !Peticion hacia el backend
@@ -93,7 +115,6 @@ const Register = () => {
 
   return (
     <section className='w-full h-screen bg-blue-200 flex justify-center items-center'>
-         <Toaster toastOptions={{duration:1700}} position='top-right'/>
         <div className='min-w-[26%] min-h-[60%] bg-gray-200 opacity-80  rounded-2xl p-2 max-md:min-w-[95%] max-md:min-h-[65%]'>
             <div className='w-full flex justify-center'>
               <img className='h-28 max-md:h-20' src={Img} alt="" />
