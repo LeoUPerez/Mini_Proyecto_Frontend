@@ -13,45 +13,44 @@ const Register = () => {
   const [required_mail, setRe_Mail] = useState(true);
 
   function onchange() {
-    let user = document.getElementById('Name');
-    let lastname = document.getElementById('Last_name');
-    let password = document.getElementById('Password');
-    let phone_user = document.getElementById('Phone_Number');
-    let mail_user = document.getElementById('Mail');
-    
-    setbody(
-      {
-        username: user.value,
-        last_name: lastname.value,
-        password: password.value,
-        phone: phone_user.value,
-        mail: mail_user.value
+      let user = document.getElementById('Name');
+      let lastname = document.getElementById('Last_name');
+      let password = document.getElementById('Password');
+      let phone_user = document.getElementById('Phone_Number');
+      let mail_user = document.getElementById('Mail');
+      
+      setbody(
+        {
+          username: user.value,
+          last_name: lastname.value,
+          password: password.value,
+          phone: phone_user.value,
+          mail: mail_user.value
+        }
+      )  
+  
+      if (user.value !== "") {
+        setRe_User(false)
+      }else{
+        setRe_User(true)
       }
-    )  
-
-    if (user.value !== "") {
-      setRe_User(false)
-    }else{
-      setRe_User(true)
-    }
-    if (lastname.value !== "") {
-      setRe_Last(false)
-    }else{
-      setRe_Last(true)
-    }if (password.value !== "") {
-      setRe_Pass(false)
-    } else {
-      setRe_Pass(true)
-    }if (phone_user.value !== "") {
-      setRe_Phone(false)
-    } else {
-      setRe_Phone(true)
-    }if (mail_user.value !== "") {
-      setRe_Mail(false)
-    } else {
-      setRe_Mail(true)
-    }
-    // console.log(body);
+      if (lastname.value !== "") {
+        setRe_Last(false)
+      }else{
+        setRe_Last(true)
+      }if (password.value !== "") {
+        setRe_Pass(false)
+      } else {
+        setRe_Pass(true)
+      }if (phone_user.value !== "") {
+        setRe_Phone(false)
+      } else {
+        setRe_Phone(true)
+      }if (mail_user.value !== "") {
+        setRe_Mail(false)
+      } else {
+        setRe_Mail(true)
+      }      
   }
 
   // !Peticion hacia  el backend
