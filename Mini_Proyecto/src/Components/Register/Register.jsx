@@ -4,8 +4,6 @@ import Img from '/Users/Leo/Desktop/Mini_Proyecto_Frontend/Mini_Proyecto/src/ass
 import Regex from '/Users/Leo/Desktop/Mini_Proyecto_Frontend/Mini_Proyecto/src/utils/functions/Regex.js'
 import Swal from 'sweetalert2'
 
-// import  { Toaster, toast } from 'react-hot-toast';
-
 const Register = () => {
 
   const [body, setbody] = useState({username: "", last_name: "", password: "",phone: "", mail: ""});
@@ -16,17 +14,25 @@ const Register = () => {
   const [required_mail, setRe_Mail] = useState(true);
 
   function onchange(e) {
+    let validation;
+    let validationphone;
+
       let user = document.getElementById('Name');
       let lastname = document.getElementById('Last_name');
       let password = document.getElementById('Password');
       let phone_user = document.getElementById('Phone_Number');
       let mail_user = document.getElementById('Mail');
       let Not_valid = document.getElementById(e.target.id);
-      let validation = Regex.Verfify(user.value, lastname.value, password.value, phone_user.value, mail_user.value);
-      // console.log(validation);
-      // console.log(e.target);
+      let restricted_characters = document.getElementById('restricted_characters');
 
-      if (validation) {
+      // Validar phone Number y demas campos
+      if (e.target.id === "Phone_Number") {
+        validationphone = Regex.VerifyNumber(phone_user.value); 
+      }else{
+        validation = Regex.Verfify(user.value, lastname.value, password.value, mail_user.value);
+      }
+
+      if (validation || validationphone) {
         setbody(
           {
             username: user.value,
@@ -59,13 +65,11 @@ const Register = () => {
         } else {
           setRe_Mail(true)
         }       
-        Not_valid.className = 'w-3/4 h-9 outline-blue-200 p-2 rounded-lg max-md:w-4/5';
+          Not_valid.className = 'w-3/4 h-9 outline-blue-200 p-2 rounded-lg max-md:w-4/5';
+          restricted_characters.className = 'text-xs min-w-[75%] p-0.5 text-red-600 opacity-0 max-md:min-w-[80%]'
       }else{
-
-        Not_valid.className = 'w-3/4 h-9 outline-red-400 p-2 rounded-lg max-md:w-4/5'
-
-
-        // console.log(Not_valid);
+          Not_valid.className = 'w-3/4 h-9 outline-red-400 p-2 rounded-lg max-md:w-4/5'
+          restricted_characters.className = 'text-xs min-w-[75%] p-0.5 text-red-600 opacity-100 max-md:min-w-[80%]'
       }
   }
   // !Peticion hacia  el backend
@@ -78,9 +82,10 @@ const Register = () => {
             icon: 'error',
             title: 'Oops...',
             text: 'You must fill in all fields!'
-            // footer: '<a href="">Why do I have this issue?</a>'
           })
     }else{
+      let inputs = document.querySelectorAll('input');
+
       axios.post('http://localhost:3000/api/usuarios/'+'14d5ds', body)
       .then(({data})=>{
         console.log(data);
@@ -92,14 +97,27 @@ const Register = () => {
         text: 'Account created successfully, you can log in!',
         icon: 'success',
         confirmButtonText: 'Ok',
-        footer: '<a href="/login">Why do I have this issue?</a>'
+        footer: '<a href="/login">Do you want to login?</a>'
       })
+      
+      for (let index = 0; index < inputs.length; index++) {
+        inputs[index].value = '';
+      }
+      setbody(
+        {
+          username: '',
+          last_name: '',
+          password: '',
+          phone: '',
+          mail: ''
+        }
+      )  
     }
   }
   // !Peticion hacia el backend
 
   // !Funcion para vizualizar contraseña
-  function VizualizarPass() {
+  function Display_password() {
     let password = document.getElementById('Password');
     let icon = document.getElementById('icon');
 
@@ -117,9 +135,10 @@ const Register = () => {
     <section className='w-full h-screen bg-blue-200 flex justify-center items-center'>
         <div className='min-w-[26%] min-h-[60%] bg-gray-200 opacity-80  rounded-2xl p-2 max-md:min-w-[95%] max-md:min-h-[65%]'>
             <div className='w-full flex justify-center'>
-              <img className='h-28 max-md:h-20' src={Img} alt="" />
+              <img className='h-28 max-md:h-20 text-blue-500' src={Img} alt="" />
             </div>
             <form id='formulario' action="" className='flex flex-col h-1/2s pt-6 justify-center items-center'>
+              <div id='restricted_characters' className='text-xs min-w-[75%] p-0.5 text-red-600 opacity-0 max-md:min-w-[80%]'>Accepted characters: [A-Z] [0-9][-@_.]</div>
                 <input onChange={onchange} autoComplete='off' type="text" name="" id="Name" placeholder='Name' className='w-3/4 h-9 outline-blue-200 p-2 rounded-lg max-md:w-4/5' />
                 <div className={required_user ? 'text-xs min-w-[75%] p-0.5 text-red-600 opacity-100 max-md:min-w-[80%]' : 'text-xs min-w-[60%] p-0.5 text-red-600 opacity-0 max-md:min-w-[80%]'}>Required field</div>
                 <input onChange={onchange} autoComplete='off' type="text" name="" id="Last_name" placeholder='Last name' className='w-3/4 h-9 outline-blue-200 p-2 rounded-lg max-md:w-4/5'/>
@@ -127,7 +146,7 @@ const Register = () => {
                 <div className='w-full ml-5 flex items-center justify-center gap-1'>
                   <input onChange={onchange} autoComplete='off' type="password" name="" id="Password" placeholder='Password' className='w-3/4 h-9 outline-blue-200 p-2 rounded-lg max-md:w-4/5'/>
                   <div className=''>
-                    <i onClick={VizualizarPass} id='icon' className="fa-regular fa-eye-slash cursor-pointer"></i>
+                    <i onClick={Display_password} id='icon' className="fa-regular fa-eye-slash cursor-pointer"></i>
                   </div>
                 </div>
                 <div className={required_pass ? 'text-xs min-w-[75%] p-0.5 text-red-600 opacity-100 max-md:min-w-[80%]' : 'text-xs min-w-[60%] p-0.5 text-red-600 opacity-0 max-md:min-w-[80%]'}>Required field</div>

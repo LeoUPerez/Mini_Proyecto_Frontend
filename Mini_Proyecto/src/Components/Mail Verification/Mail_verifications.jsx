@@ -32,7 +32,6 @@ function onchange(params) {
             icon: 'error',
             title: 'Oops...',
             text: 'Mail not found!'
-            // footer: '<a href="">Why do I have this issue?</a>'
           })
           console.log(data);
         }
@@ -50,7 +49,6 @@ function check_mail() {
         icon: 'error',
         title: 'Oops...',
         text: 'You must fill in all fields!'
-        // footer: '<a href="">Why do I have this issue?</a>'
       })
     }
  }
