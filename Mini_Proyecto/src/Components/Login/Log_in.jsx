@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import Img from '/Users/Leo/Desktop/Mini_Proyecto_Frontend/Mini_Proyecto/src/assets/Images/RealSinName.png'
 import Swal from 'sweetalert2'
 // import LoginImg from '../Images/Login.avif' //!Imagen para login
 
@@ -66,7 +67,7 @@ const Log_in = () => {
 
   return (
     <section className='w-full h-screen bg-blue-200 flex justify-center items-center'>
-        <div className='min-w-[28%] h-2/5 bg-gray-200 opacity-80  rounded-2xl p-2 max-md:min-w-[95%]'>
+        <div className='min-w-[28%] h-2/4 bg-gray-200 opacity-80  rounded-2xl p-2 max-md:min-w-[95%] max-lg:min-w-[45%]'>
             <form id='formulario' action="" className='h-full w-full'>
                 <div className='w-full flex justify-end items-center gap-3'>
                   <strong className='text-black'>Login</strong>
@@ -74,13 +75,16 @@ const Log_in = () => {
                     <strong>Create Account</strong> 
                   </Link>
                 </div>
-                <div id='inputs' className='flex flex-col h-1/2 justify-center items-center relative'>
+                <div className='w-full flex justify-center items-center'>
+                <img className='h-24 max-md:h-14 text-blue-500' src={Img} alt="" />
+                </div>
+                <div id='inputs' className='flex flex-col h-2/5 justify-center items-center relative'>
                   <input onChange={onchange} id='user' name='user' className='w-3/5 h-9 outline-blue-200 p-2 rounded-lg max-md:w-2/3' placeholder='User' type="text" />
                   <div className={required_user ? 'text-xs min-w-[60%] p-0.5 text-red-600 opacity-100 max-md:min-w-[66%]' : 'text-xs min-w-[60%] p-0.5 text-red-600 opacity-0 max-md:min-w-[66%]'}>Required field</div>
                   <input onChange={onchange} id='pass' name='pass' className='w-3/5 h-9 outline-blue-200 p-2 rounded-lg max-md:w-2/3' placeholder='Password' type="password" />
                   <div className={required_pass ? 'text-xs min-w-[60%] p-0.5 text-red-600 opacity-100 max-md:min-w-[66%]' : 'text-xs min-w-[60%] p-0.5 text-red-600 opacity-0 max-md:min-w-[66%]'}>Required field</div>
                   <div className='w-full flex justify-end pr-2 absolute bottom-1'>
-                  <Link className=' text-blue-900 max-md:text-xs' to={'/Mailverification'}>
+                  <Link className=' text-blue-900 h-9 flex justify-center items-end max-md:text-xs' to={'/Mailverification'}>
                   Forgot your password?
                   </Link>
                 </div>

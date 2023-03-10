@@ -138,7 +138,7 @@ const Register = () => {
               <img className='h-28 max-md:h-20 text-blue-500' src={Img} alt="" />
             </div>
             <form id='formulario' action="" className='flex flex-col h-1/2s pt-6 justify-center items-center'>
-              <div id='restricted_characters' className='text-xs min-w-[75%] p-0.5 text-red-600 opacity-0 max-md:min-w-[80%]'>Accepted characters: [A-Z] [0-9][-@_.]</div>
+              <div id='restricted_characters' className='text-xs min-w-[75%] p-0.5 text-red-600 opacity-0 max-md:min-w-[80%]'>Sorry, only letters (a-z), numbers (0-9) and special characters <br/> (.@-_) are allowed.</div>
                 <input onChange={onchange} autoComplete='off' type="text" name="" id="Name" placeholder='Name' className='w-3/4 h-9 outline-blue-200 p-2 rounded-lg max-md:w-4/5' />
                 <div className={required_user ? 'text-xs min-w-[75%] p-0.5 text-red-600 opacity-100 max-md:min-w-[80%]' : 'text-xs min-w-[60%] p-0.5 text-red-600 opacity-0 max-md:min-w-[80%]'}>Required field</div>
                 <input onChange={onchange} autoComplete='off' type="text" name="" id="Last_name" placeholder='Last name' className='w-3/4 h-9 outline-blue-200 p-2 rounded-lg max-md:w-4/5'/>

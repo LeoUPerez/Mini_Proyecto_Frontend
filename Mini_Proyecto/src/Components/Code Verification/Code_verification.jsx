@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react'
+import Img from '/Users/Leo/Desktop/Mini_Proyecto_Frontend/Mini_Proyecto/src/assets/Images/RealSinName.png'
 import Swal from 'sweetalert2'
 
 const Code_verification = () => {
@@ -54,7 +55,10 @@ const Code_verification = () => {
 
   return (
     <section className='w-full h-screen bg-blue-200 flex justify-center items-center'>
-        <form className='min-w-[25%] min-h-[45%] flex flex-col items-center justify-center bg-gray-200 rounded-2xl max-md:min-w-[95%] max-md:min-h-[40%]'>
+        <form className='min-w-[25%] min-h-[45%] gap-1 flex flex-col items-center justify-center bg-gray-200 rounded-2xl max-md:min-w-[95%] max-md:min-h-[40%] max-lg:min-w-[45%]'>
+            <div className='w-full flex justify-center items-center'>
+              <img className='h-20 max-md:h-14 text-blue-500' src={Img} alt="" />
+            </div>            
             <p className='text-red-600 text-xs pb-2'>¡Enter the code sent to your email!</p>
             <input onChange={onchange} id='code' type="email" name="" autoComplete='off' placeholder='Enter your code' className='w-8/12 h-9 outline-blue-200 p-2 rounded-lg max-md:w-2/3' />
             <div className={required_code ? 'text-xs min-w-[65%] p-0.5 text-red-600 opacity-100 max-md:min-w-[65%]' : 'text-xs min-w-[60%] p-0.5 text-red-600 opacity-0 max-md:min-w-[60%]'}>Required field</div>
