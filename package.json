@@ -1,7 +1,6 @@
 {
   "name": "mini-proyecto",
   "private": true,
-  "homepage": "https://LeoUPerez.github.io/Mini_Proyecto_Frontend/build",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
