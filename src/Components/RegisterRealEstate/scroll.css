@@ -1,0 +1,15 @@
+#realestateregister {
+  animation-duration: 1s;
+  animation-name: realestateregister;
+}
+@keyframes realestateregister {
+  from {
+    margin-left: 100vh;
+    opacity: 0;
+  }
+
+  to {
+    margin-left: 0%;
+    opacity: 1;
+  }
+}

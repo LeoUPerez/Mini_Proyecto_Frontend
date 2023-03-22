@@ -1,0 +1,15 @@
+#services {
+  animation-duration: 1s;
+  animation-name: services;
+}
+@keyframes services {
+  from {
+    margin-left: 100vh;
+    opacity: 0;
+  }
+
+  to {
+    margin-left: 0%;
+    opacity: 1;
+  }
+}

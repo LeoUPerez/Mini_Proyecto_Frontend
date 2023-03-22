@@ -1,0 +1,15 @@
+#register {
+  animation-duration: 1s;
+  animation-name: register;
+}
+@keyframes register {
+  from {
+    margin-bottom: 100vh;
+    opacity: 0;
+  }
+
+  to {
+    margin-left: 0%;
+    opacity: 1;
+  }
+}

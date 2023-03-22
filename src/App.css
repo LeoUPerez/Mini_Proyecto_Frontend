@@ -1,0 +1,51 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+#mano-izq {
+  animation-duration: 1.5s;
+  animation-name: sliden;
+}
+@keyframes sliden {
+  from {
+    height: 0px;
+  }
+
+  to {
+  }
+}
+
+#mano-De {
+  animation-duration: 1.5s;
+  animation-name: sliden2;
+}
+@keyframes sliden2 {
+  from {
+    height: 0px;
+  }
+
+  to {
+    margin-right: 0%;
+  }
+}
+
+#form {
+  animation-duration: 1.5s;
+  animation-name: form;
+}
+@keyframes form {
+  from {
+    margin-bottom: 50vh;
+    opacity: 0;
+  }
+
+  to {
+    margin-right: 0%;
+    opacity: 1;
+  }
+}

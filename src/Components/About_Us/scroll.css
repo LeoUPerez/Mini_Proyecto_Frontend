@@ -1,0 +1,16 @@
+#aboutUs {
+  animation-duration: 1s;
+  animation-name: aboutUs;
+}
+
+@keyframes aboutUs {
+  from {
+    margin-left: 100vh;
+    opacity: 0;
+  }
+
+  to {
+    margin-left: 0%;
+    opacity: 1;
+  }
+}

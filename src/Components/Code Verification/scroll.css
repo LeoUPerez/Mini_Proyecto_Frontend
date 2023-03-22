@@ -1,0 +1,15 @@
+#CodeVerification {
+  animation-duration: 1s;
+  animation-name: CodeVerification;
+}
+@keyframes CodeVerification {
+  from {
+    margin-top: 100vh;
+    opacity: 0;
+  }
+
+  to {
+    margin-left: 0%;
+    opacity: 1;
+  }
+}

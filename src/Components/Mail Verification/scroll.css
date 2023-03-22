@@ -1,0 +1,15 @@
+#mailverify {
+  animation-duration: 1s;
+  animation-name: mailverify;
+}
+@keyframes mailverify {
+  from {
+    margin-right: 100vh;
+    opacity: 0;
+  }
+
+  to {
+    margin-left: 0%;
+    opacity: 1;
+  }
+}
