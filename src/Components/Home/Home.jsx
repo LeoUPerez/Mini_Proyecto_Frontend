@@ -49,6 +49,7 @@ const Home = () => {
   }
   function Modalclose() {
     setmodalinfo(false);
+    localStorage.removeItem("Estatus");
     location.reload();
   }
 

@@ -5,7 +5,16 @@ import Swal from "sweetalert2";
 
 const RealEstateInfo = ({ visualize, Modalset, propertys }) => {
   async function Confirm_purchase() {
-    let balance = await localStorage.getItem("Balance");
+    let Estatus = await localStorage.getItem("Estatus");
+
+    if (Estatus !== null) {
+        Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "This real estate has already been acquired",
+      });
+    } else {
+ let balance = await localStorage.getItem("Balance");
     if (balance !== null) {
       if (parseInt(balance) < parseInt(propertys.Price)) {
         Swal.fire({
@@ -41,6 +50,7 @@ const RealEstateInfo = ({ visualize, Modalset, propertys }) => {
           title: "Yeihhhhhh!",
           text: "Congratulations, you have successfully acquired this property",
         });
+        localStorage.setItem("Estatus", "Sold");
         let newBalance = (await parseInt(balance)) - parseInt(propertys.Price);
 
         let Token = await {
@@ -62,6 +72,7 @@ const RealEstateInfo = ({ visualize, Modalset, propertys }) => {
         title: "Oops...",
         text: "You do not have enough balance to make this purchase, go to your profile to add a payment method",
       });
+    }      
     }
   }
 
