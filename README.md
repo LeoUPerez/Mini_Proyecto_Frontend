@@ -4,7 +4,8 @@ Para instalar este proyecto, es necesario seguir los siguientes pasos:
 1. Clonar el repositorio del proyecto.
 2. Navegar a la carpeta del proyecto.
 3. Ejecutar npm install para instalar todas las dependencias del proyecto.
- Uso
+
+# Uso
 Una vez instalado el proyecto, se puede utilizar de la siguiente manera:
 
 # Modo de desarrollo
