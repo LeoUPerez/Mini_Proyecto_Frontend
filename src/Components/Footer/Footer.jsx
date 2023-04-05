@@ -1,5 +1,7 @@
 import React from "react";
 import Img from "../../assets/Images/RealSinName.png";
+// import Img from "../../../src/assets/Images_Slider/Apartamento2.jpg";
+
 
 const Footer = () => {
   return (

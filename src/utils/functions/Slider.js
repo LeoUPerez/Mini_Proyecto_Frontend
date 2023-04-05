@@ -4,10 +4,10 @@ Slide.slideimages = () => {
   let slider = document.getElementById("slider");
   let indice = 0;
   var images = [
-    "h-screen w-full flex flex-col transition-all duration-200  bg-no-repeat bg-cover bg-center bg-[url('/Users/Leo/Desktop/Mini_Proyecto/src/assets/Images_Slider/Apartamento2.jpg')]",
-    "h-screen w-full flex flex-col transition-all duration-200  bg-no-repeat bg-cover bg-center bg-[url('/Users/Leo/Desktop/Mini_Proyecto/src/assets/Images_Slider/Casa1.jpg')]",
-    "h-screen w-full flex flex-col transition-all duration-200  bg-no-repeat bg-cover bg-center bg-[url('/Users/Leo/Desktop/Mini_Proyecto/src/assets/Images_Slider/Casa2.jpg')]",
-    "h-screen w-full flex flex-col transition-all duration-200  bg-no-repeat bg-cover bg-center bg-[url('/Users/Leo/Desktop/Mini_Proyecto/src/assets/Images_Slider/Casa3.jpg')]",
+    "h-screen w-full flex flex-col transition-all duration-200  bg-no-repeat bg-cover bg-center bg-[url('../../../src/assets/Images_Slider/Apartamento2.jpg')]",
+    "h-screen w-full flex flex-col transition-all duration-200  bg-no-repeat bg-cover bg-center bg-[url('../../../src/assets/Images_Slider/Casa1.jpg')]",
+    "h-screen w-full flex flex-col transition-all duration-200  bg-no-repeat bg-cover bg-center bg-[url('../../../src/assets/Images_Slider/Casa2.jpg')]",
+    "h-screen w-full flex flex-col transition-all duration-200  bg-no-repeat bg-cover bg-center bg-[url('../../../src/assets/Images_Slider/Casa3.jpg')]",
   ];
 
   function change_image() {
