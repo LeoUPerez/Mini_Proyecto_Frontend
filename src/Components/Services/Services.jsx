@@ -1,8 +1,7 @@
 import React, { useEffect } from "react";
 import Header from "../Header/Header.jsx";
 import NavBar from "../NavBar/NavBar.jsx";
-import NavOptions from "/Users/Leo/Desktop/Mini_Proyecto/src/utils/functions/NavOpen-Close";
-import Hall from "/Users/Leo/Desktop/Mini_Proyecto/src/assets/Images_Services/Hall.jpg";
+import NavOptions from "../../utils/functions/NavOpen-Close.js";
 import Button_Down from "./Button_Down.jsx";
 import "../Services/Scroll.css";
 import Button_Up from "./Button_Up.jsx";
@@ -35,7 +34,7 @@ const Services = () => {
           className="w-full min-h-screen relative flex justify-center items-end gap-5 flex-wrap p-10 bg-no-repeat bg-cover bg-center bg-[url('/Users/Leo/Desktop//Mini_Proyecto/src/assets/Images_Services/Hall.jpg')] max-md:p-2 max-md:h-2/3 max-lg:h-2/3 max-xl:h-1/2 max-2xl:h-2/6 max-lg:p-2"
         >
           <div className="w-1/3 h-72 flex absolute bottom-1 left-1 mt-20 mr-4 flex-col p-2 bg-opacity-90 rounded-xl max-xl:w-72 max-xl:h-80 max-lg:w-60 max-lg:h-72 max-md:w-56 max-md:h-60 max-[375px]:w-40 max-[375px]:h-92 max-sm:h-72 4 max-sm:w-40 max-[536px]:h-">
-            <h2 className="text-4xl text-center text-blue-200 max-md:text-base max-sm:text-xs">
+            <h2 className="text-4xl text-center text-blue-200 max-md:text-base max-sm:text-xs max-md:w-56">
               <strong>Property Valuation</strong>
             </h2>
             <p className="text-justify max-xl:text-sm max-lg:text-xs p-3 text-white text-lg max-md:w-56">
@@ -57,11 +56,11 @@ const Services = () => {
           id="services2"
           className="w-full min-h-screen flex items-end justify-center p-10 relative bg-no-repeat bg-cover bg-center bg-[url('/Users/Leo/Desktop/Mini_Proyecto/src/assets/Images_Services/Kitchen.jpg')]"
         >
-          <div className="w-1/3 h-80 flex flex-col absolute top-1 right-1 ml-2 mt-20 p-2 bg-opacity-90 rounded-xl max-xl:w-72 max-xl:h-80 max-lg:w-60 max-lg:h-72 max-md:w-56 max-md:h-60 max-[375px]:w-40 max-[375px]:h-92 max-sm:h-96 max-sm:w-40">
-            <h2 className="text-4xl text-center text-blue-200 max-md:text-base max-sm:text-xs">
+          <div className="w-1/3 h-80 flex flex-col absolute top-1 right-20 ml-2 mt-20 p-2 bg-opacity-90 rounded-xl max-xl:w-72 max-xl:h-80 max-lg:w-60 max-lg:h-72 max-md:w-56 max-md:h-60 max-[375px]:w-40 max-[375px]:h-92 max-sm:h-96 max-sm:w-40">
+            <h2 className="text-4xl text-center text-blue-200 max-md:text-base max-sm:text-xs max-md:w-56">
               <strong>Advertising and marketing</strong>
             </h2>
-            <p className="text-justify max-xl:text-sm max-lg:text-xs p-3 text-white text-lg ">
+            <p className="text-justify max-xl:text-sm max-lg:text-xs p-3 text-white text-lg max-md:w-56">
               <strong>
                 Our advertising and marketing service is essential for your
                 property to stand out in an increasingly competitive real estate
@@ -78,11 +77,11 @@ const Services = () => {
           id="services3"
           className="w-full min-h-screen flex items-end justify-center p-10 relative bg-no-repeat bg-cover bg-center bg-[url('/Users/Leo/Desktop/Mini_Proyecto/src/assets/Images_Services/Room.jpg')]"
         >
-          <div className="w-1/3 h-52 flex flex-col absolute bottom-1 right-1 p-2 mt-20 ml-4 bg-opacity-90 rounded-xl max-xl:w-72 max-xl:h-80 max-lg:w-60 max-lg:h-72 max-md:w-56 max-md:h-60 max-[375px]:w-40 max-[375px]:h-80 max-sm:h-96 max-sm:w-40 max-[536px]:h-80">
-            <h2 className="text-4xl text-center text-blue-200 max-md:text-base max-sm:text-xs">
+          <div className="w-1/3 h-52 flex flex-col absolute bottom-1 right-20 p-2 mt-20 ml-4 bg-opacity-90 rounded-xl max-xl:w-72 max-xl:h-80 max-lg:w-60 max-lg:h-72 max-md:w-56 max-md:h-60 max-[375px]:w-40 max-[375px]:h-80 max-sm:h-96 max-sm:w-40 max-[536px]:h-80">
+            <h2 className="text-4xl text-center text-blue-200 max-md:text-base max-sm:text-xs max-md:w-56">
               <strong>Legal advice</strong>
             </h2>
-            <p className="text-justify max-xl:text-sm max-lg:text-xs p-3 text-white text-lg ">
+            <p className="text-justify max-xl:text-sm max-lg:text-xs p-3 text-white text-lg max-md:w-56 ">
               <strong>
                 At our real estate agency, we offer a comprehensive legal advice
                 service for our clients. We know that the process of buying,
@@ -99,7 +98,7 @@ const Services = () => {
           className="w-full min-h-screen flex items-end justify-center p-10 relative bg-no-repeat bg-cover bg-center bg-[url('/Users/Leo/Desktop/Mini_Proyecto/src/assets/Images_Services/Yard.jpg')]"
         >
           <div className="w-1/3 h-80 flex flex-col absolute left-1 top-1 ml-4 mt-20 p-1 bg-opacity-90 rounded-xl max-xl:w-72 max-xl:h-80 max-lg:w-60 max-lg:h-72 max-md:w-56 max-md:h-60 max-[375px]:w-40 max-[375px]:h-80 max-sm:h-80 max-sm:w-40">
-            <h2 className="text-4xl text-center text-blue-200 max-md:text-base max-sm:text-xs">
+            <h2 className="text-4xl text-center text-blue-200 max-md:text-base max-sm:text-xs max-md:w-56">
               <strong>Negotiation and closing of transactions</strong>
             </h2>
             <p className="text-justify max-xl:text-sm max-lg:text-xs p-3 text-white text-lg max-md:w-56">

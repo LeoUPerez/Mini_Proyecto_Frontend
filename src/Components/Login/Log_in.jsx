@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import Img from "/Users/Leo/Desktop/Mini_Proyecto/src/assets/Images/RealSinName.png";
+import Img from "../../assets/Images/RealSinName.png";
 import Swal from "sweetalert2";
 import "../Login/scroll.css";
 

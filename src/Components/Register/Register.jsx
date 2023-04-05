@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
-import Img from "/Users/Leo/Desktop/Mini_Proyecto/src/assets/Images/RealSinName.png";
-import Regex from "/Users/Leo/Desktop/Mini_Proyecto/src/utils/functions/Regex.js";
+import Img from "../../assets/Images/RealSinName.png";
+import Regex from "../../utils/functions/Regex.js";
 import Swal from "sweetalert2";
 import "../Register/scroll.css";
 

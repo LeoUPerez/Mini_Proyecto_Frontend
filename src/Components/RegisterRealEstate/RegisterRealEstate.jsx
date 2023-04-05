@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import Img from "/Users/Leo/Desktop/Mini_Proyecto/src/assets/Images/RealSinName.png";
+import Img from "../../assets/Images/RealSinName.png";
 import "../RegisterRealEstate/scroll.css";
 import Swal from "sweetalert2";
 

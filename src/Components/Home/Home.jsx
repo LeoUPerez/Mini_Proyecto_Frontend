@@ -3,11 +3,11 @@ import Typed from "typed.js";
 import Header from "../Header/Header.jsx";
 import Card_info_slide from "../Card-Info-Slide/Card_info_slide.jsx";
 import NavBar from "../NavBar/NavBar.jsx";
-import NavOptions from "/Users/Leo/Desktop/Mini_Proyecto/src/utils/functions/NavOpen-Close";
-import slider from "/Users/Leo/Desktop/Mini_Proyecto/src/utils/functions/Slider.js";
-import Mano from "/Users/Leo/Desktop/Mini_Proyecto/src/assets/Images_Home/Mano.png";
-import ManoD from "/Users/Leo/Desktop/Mini_Proyecto/src/assets/Images_Home/Mano-De.png";
-import "/Users/Leo/Desktop/Mini_Proyecto/src/App.css";
+import NavOptions from "../../utils/functions/NavOpen-Close.js";
+import slider from "../../utils/functions/Slider.js";
+import Mano from "../../assets/Images_Home/Mano.png";
+import ManoD from "../../assets/Images_Home/Mano-De.png";
+import "../../App.css";
 import RealEstateSale from "../Real_Estate_Sale/RealEstateSale.jsx";
 import RealEstateInfo from "../ModalRealEstate/RealEstateInfo";
 

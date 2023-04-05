@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import Header from '../Header/Header.jsx'
 import NavBar from '../NavBar/NavBar.jsx';
-import NavOptions from '/Users/Leo/Desktop/Mini_Proyecto/src/utils/functions/NavOpen-Close'
-import '/Users/Leo/Desktop/Mini_Proyecto/src/App.css'
+import NavOptions from '../../utils/functions/NavOpen-Close.js'
+import '../../App.css'
 import axios from 'axios';
 import Swal from 'sweetalert2'
 

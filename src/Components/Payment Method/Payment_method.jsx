@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Img from "/Users/Leo/Desktop/Mini_Proyecto/src/assets/Images/RealSinName.png";
-import Banreservas from "/Users/Leo/Desktop/Mini_Proyecto/src/assets/Images_Payment_Methods/Banreservas.png";
-import Visa from "/Users/Leo/Desktop/Mini_Proyecto/src/assets/Images_Payment_Methods/Visa.png";
-import Mastercard from "/Users/Leo/Desktop/Mini_Proyecto/src/assets/Images_Payment_Methods/Mastercard.png";
+import Img from "../../assets/Images/RealSinName.png";
+import Banreservas from "../../assets/Images_Payment_Methods/Banreservas.png";
+import Visa from "../../assets/Images_Payment_Methods/Visa.png";
+import Mastercard from "../../assets/Images_Payment_Methods/Mastercard.png";
 import Swal from "sweetalert2";
 import axios from "axios";
 

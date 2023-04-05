@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import slider from "/Users/Leo/Desktop/Mini_Proyecto/src/utils/functions/Slider.js";
+import slider from "../../utils/functions/Slider.js";
 
 const Card_info_slide = () => {
   const Date = [];

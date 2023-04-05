@@ -1,6 +1,6 @@
 import React from "react";
-import Woman from "/Users/Leo/Desktop/Mini_Proyecto/src/assets/Avatars/Woman.png";
-import Man from "/Users/Leo/Desktop/Mini_Proyecto/src/assets/Avatars/Man.png";
+import Woman from "../../assets/Avatars/Woman.png";
+import Man from "../../assets/Avatars/Man.png";
 import { Link } from "react-router-dom";
 
 const Userprofile = () => {
@@ -15,6 +15,7 @@ const Userprofile = () => {
       {(() => {
         let UserData = sessionStorage.getItem("DataUser");
         let UserDataNew = JSON.parse(UserData);
+        console.log(UserDataNew);
         return (
           <section className="w-full h-screen flex justify-center items-center">
             <div className="w-4/5 h-4/5 bg-gray-100 rounded-xl border-2 p-2 max-md:min-h-[85%] max-md:min-w-[95%] max-[376px]:mt-5">

@@ -35,7 +35,7 @@ const NavBar = ({ Onclick, classNav }) => {
       .get("http://localhost:3000/api/usuarios/" + user)
       .then(({ data }) => {
         sessionStorage.setItem("DataUser", JSON.stringify(data));
-        console.log(data);
+        // console.log(data);
       })
       .catch(({ err }) => {
         console.log(err);
@@ -105,7 +105,6 @@ const NavBar = ({ Onclick, classNav }) => {
         ></div>
         {(() => {
           let user = sessionStorage.getItem("User");
-          sessionStorage.removeItem("DataUser");
           if (user !== null) {
             return (
               <div className="flex justify-center items-center">

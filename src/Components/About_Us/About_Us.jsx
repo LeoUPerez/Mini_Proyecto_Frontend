@@ -1,8 +1,8 @@
 import React from "react";
 import Header from "../Header/Header.jsx";
 import NavBar from "../NavBar/NavBar.jsx";
-import NavOptions from "/Users/Leo/Desktop/Mini_Proyecto/src/utils/functions/NavOpen-Close";
-import Img from "/Users/Leo/Desktop/Mini_Proyecto/src/assets/Images/RealSinName.png";
+import NavOptions from "../../utils/functions/NavOpen-Close.js";
+import Img from "../../assets/Images/RealSinName.png";
 import "../About_Us/scroll.css";
 
 const About_Us = () => {
