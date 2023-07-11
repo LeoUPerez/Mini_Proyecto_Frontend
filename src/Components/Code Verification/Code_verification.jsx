@@ -66,7 +66,7 @@ const Code_verification = () => {
       {(() => {
         if (token !== null) {
           return (
-            <section className="w-full h-screen flex justify-center items-center bg-no-repeat bg-cover bg-center bg-[url('/Users/Leo/Desktop/Mini_Proyecto/src/assets/Images/CodeVerify.jpg')]">
+            <section className="w-full h-screen flex justify-center items-center bg-no-repeat bg-cover bg-center bg-[url('C:\Users\Leo\Desktop\Mini_Proyecto_Frontend\src\assets\Images\CodeVerify.jpg')]">
               <form
                 id="CodeVerification"
                 className="min-w-[25%] min-h-[45%] gap-1 flex flex-col bg-opacity-50 items-center justify-center bg-blue-100 rounded-2xl max-md:min-w-[95%] max-md:min-h-[40%] max-lg:min-w-[45%]"

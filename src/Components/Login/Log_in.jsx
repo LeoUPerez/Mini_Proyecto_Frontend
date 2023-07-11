@@ -60,7 +60,7 @@ const Log_in = () => {
   };
 
   return (
-    <section className="w-full h-screen bg-blue-200 flex justify-center items-center  bg-no-repeat bg-cover bg-center bg-[url('/Users/Leo/Desktop/Mini_Proyecto/src/assets/Images/login.jpg')]">
+    <section className="w-full h-screen bg-blue-200 flex justify-center items-center  bg-no-repeat bg-cover bg-center bg-[url('C:\Users\Leo\Desktop\Mini_Proyecto_Frontend\src\assets\Images\login.jpg')]">
       <div
         id="login"
         className="min-w-[28%] h-2/4 bg-blue-100 bg-opacity-50  rounded-2xl p-2 max-md:min-w-[95%] max-lg:min-w-[45%]"

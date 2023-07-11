@@ -56,7 +56,7 @@ const Mail_verifications = () => {
   }
 
   return (
-    <section className="w-full h-screen bg-blue-200 flex justify-center items-center bg-no-repeat bg-cover bg-center bg-[url('/Users/Leo/Desktop/Mini_Proyecto/src/assets/Images/MailVerification.jpg')]">
+    <section className="w-full h-screen bg-blue-200 flex justify-center items-center bg-no-repeat bg-cover bg-center bg-[url('C:\Users\Leo\Desktop\Mini_Proyecto_Frontend\src\assets\Images\MailVerification.jpg')]">
       <form
         id="mailverify"
         className="min-w-[25%] min-h-[45%] flex gap-1 flex-col items-center justify-center bg-blue-100 bg-opacity-50 rounded-2xl max-md:min-w-[95%] max-md:min-h-[40%] max-lg:min-w-[45%]"

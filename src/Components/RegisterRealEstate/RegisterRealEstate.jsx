@@ -81,7 +81,7 @@ const RegisterRealEstate = () => {
   }
 
   return (
-    <section className="w-screen min-h-screen flex justify-center items-center p-3 flex-col gap-3 bg-no-repeat bg-cover bg-center bg-[url('/Users/Leo/Desktop/Mini_Proyecto/src/assets/Images/createrealstate.avif')]">
+    <section className="w-screen min-h-screen flex justify-center items-center p-3 flex-col gap-3 bg-no-repeat bg-cover bg-center bg-[url('C:\Users\Leo\Desktop\Mini_Proyecto_Frontend\src\assets\Images\createrealstate.avif')]">
       <div
         id="realestateregister"
         className="w-3/4 h-5/6 bg-gray-300 bg-opacity-80 rounded-xl border-2"

@@ -151,7 +151,7 @@ const Register = () => {
   }
 
   return (
-    <section className="w-full h-screen flex justify-center items-center bg-no-repeat bg-cover bg-center bg-[url('/Users/Leo/Desktop/Mini_Proyecto/src/assets/Images/register.jpg')]">
+    <section className="w-full h-screen flex justify-center items-center bg-no-repeat bg-cover bg-center bg-[url('C:\Users\Leo\Desktop\Mini_Proyecto_Frontend\src\assets\Images\register.jpg')]">
       <div
         id="register"
         className="min-w-[26%] min-h-[60%] bg-blue-100 bg-opacity-50  rounded-2xl p-2 max-md:min-w-[95%] max-md:min-h-[65%]"
@@ -215,7 +215,7 @@ const Register = () => {
               name=""
               id="Password"
               placeholder="Password"
-              className="w-3/4 h-9 outline-blue-200 p-2 rounded-lg max-md:w-4/5"
+              className="w-3/4 h-9 outline-blue-200  p-2 rounded-lg max-md:w-4/5"
             />
             <div className="">
               <i
